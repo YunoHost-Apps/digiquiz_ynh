@@ -1,1 +1,1 @@
-Digiwords est une application en ligne simple pour créer des nuages de mots.
+Digiquiz permet de publier des fichiers créés avec H5P.
