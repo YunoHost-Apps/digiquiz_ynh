@@ -1,1 +1,1 @@
-Digiquiz inclut les dernières versions des dépendances de chaque module d'activité. En cas de problème lors du téléchargement d'une archive créée avec des versions antérieures, une solution peut être de la rouvrir dans un éditeur H5P mis à jour et de l'enregistrer de nouveau.
+Digiquiz inclut les dernières versions des dépendances de chaque module d'activité H5P. En cas de problème lors du téléchargement d'une archive créée avec des versions antérieures, une solution peut être de la rouvrir dans un éditeur H5P mis à jour et de l'enregistrer de nouveau.
