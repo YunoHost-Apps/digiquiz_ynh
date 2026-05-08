@@ -1,0 +1,11 @@
+--- a/vite.config.mjs 
++++ b/vite.config.mjs 
+@@ -77,7 +77,7 @@
+ 			}
+ 		},
+ 		build: {
+-			target: ['es2020', 'edge88', 'firefox78', 'chrome87', 'safari12'],
++			target: ['es2019'],
+ 			assetsDir: 'static/assets'
+ 		}
+ 	}

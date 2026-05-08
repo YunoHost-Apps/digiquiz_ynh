@@ -1,0 +1,1 @@
+Digiquiz includes the latest H5P libraries. If you encounter issues uploading H5P archives, try opening and re-saving them in an H5P editor to update them.
