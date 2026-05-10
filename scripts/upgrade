@@ -12,6 +12,8 @@ source /usr/share/yunohost/helpers
 
 ynh_app_setting_set_default --key=php_upload_max_filesize --value=5G
 ynh_app_setting_set_default --key=php_post_max_size --value=5G
+# backup database 
+cp -pr "$install_dir/dist/inc/digiquiz.db" "/tmp/digiquiz.db.bak" 2>/dev/null || true
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -21,13 +23,12 @@ ynh_script_progression "Upgrading source files..."
 # Download, check integrity, uncompress and patch the source from manifest.toml
 ynh_setup_source --dest_dir="$install_dir" --full_replace --keep="dist/inc/digiquiz.db dist/fichiers"
 
+
 #=================================================
 # UPDATE A CONFIG FILE
 #=================================================
 ynh_script_progression "Updating $app's configuration files..."
 ynh_config_add --template=".env.production" --destination="$install_dir/.env.production"
-# patch old vite config with latest version
-# ynh_config_add --template="vite.config.mjs" --destination="$install_dir/vite.config.mjs"
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
@@ -50,6 +51,9 @@ popd
 
 rm -rf "$install_dir/dist/fichiers"
 ln -s "$data_dir/fichiers" "$install_dir/dist/fichiers"
+# restore database
+# backup database 
+cp -pr "/tmp/digiquiz.db.bak" "$install_dir/dist/inc/digiquiz.db" 2>/dev/null || true
 chown -R $app:www-data "$install_dir"
 
 #=================================================
