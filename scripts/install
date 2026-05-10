@@ -51,10 +51,11 @@ pushd "$install_dir"
 	ynh_hide_warnings ynh_exec_as_app npm install
 	ynh_hide_warnings ynh_exec_as_app npm run build
 popd
+ynh_safe_rm "$install_dir/dist/fichiers"
+ln -s "$data_dir/fichiers" "$install_dir/dist/fichiers"
 
 chown -R $app:www-data "$install_dir"
 
-ln -s "$data_dir/fichiers" "$install_dir/dist/fichiers"
 
 #=================================================
 # END OF SCRIPT
