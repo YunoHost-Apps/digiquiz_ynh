@@ -51,8 +51,8 @@ popd
 
 rm -rf "$install_dir/dist/fichiers"
 ln -s "$data_dir/fichiers" "$install_dir/dist/fichiers"
+
 # restore database
-# backup database 
 cp -pr "/tmp/digiquiz.db.bak" "$install_dir/dist/inc/digiquiz.db" 2>/dev/null || true
 chown -R $app:www-data "$install_dir"
 
