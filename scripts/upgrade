@@ -49,7 +49,7 @@ pushd "$install_dir"
 	ynh_hide_warnings ynh_exec_as_app npm run build
 popd
 
-rm -rf "$install_dir/dist/fichiers"
+ynh_safe_rm "$install_dir/dist/fichiers"
 ln -s "$data_dir/fichiers" "$install_dir/dist/fichiers"
 
 # restore database
